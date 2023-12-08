@@ -3,17 +3,13 @@ import formatCurrency from "./util/formatCurrency";
 
 const IMAGE_URL = "https://dummyimage.com/600x360";
 
-//const container = document.querySelector("[data-store-container");
-
-console.log(items);
-items.forEach((item) => createItem(item));
+const container = document.querySelector("[data-store-container]");
 
 function createItem(item) {
   const storeItemtemplate = document.querySelector("#store-item-template");
 
   const storeItem = storeItemtemplate.content.cloneNode(true);
 
-  const container = document.querySelector("[data-store-container]");
   container.dataset.id = item.id;
 
   const name = storeItem.querySelector("[data-name]");
@@ -31,4 +27,6 @@ function createItem(item) {
   container.appendChild(storeItem);
 }
 
-export function setupStore() {}
+export function setupStore() {
+  items.forEach(createItem);
+}
