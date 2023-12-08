@@ -329,5 +329,34 @@
         </div>
       </button>
     </section>
+    <template id="store-item-template">
+      <div data-store-item class="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <div class="block relative h-48 rounded overflow-hidden">
+          <img
+            data-image
+            alt="ecommerce"
+            class="object-cover object-center w-full h-full block"
+          />
+        </div>
+        <div class="mt-4 flex items-end justify-between">
+          <div>
+            <h3
+              data-category
+              class="text-gray-500 text-xs tracking-widest title-font uppercase mb-1"
+            ></h3>
+            <h2
+              data-name
+              class="text-gray-900 title-font text-lg font-medium"
+            ></h2>
+            <p data-price class="mt-1"></p>
+          </div>
+          <button
+            class="text-white py-2 px-4 text-xl bg-blue-500 rounded hover:bg-blue-700"
+          >
+            Add To Cart
+          </button>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
