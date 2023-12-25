@@ -3,13 +3,15 @@ import formatCurrency from "./util/formatCurrency";
 
 const IMAGE_URL = "https://dummyimage.com/600x360";
 
-const container = document.querySelector("[data-store-container]");
+const storeItemContainer = document.querySelector("[data-store-container]");
 
 function createItem(item) {
+  if (!storeItemContainer) return;
   const storeItemtemplate = document.querySelector("#store-item-template");
 
   const storeItem = storeItemtemplate.content.cloneNode(true);
 
+  const container = storeItem.querySelector("[data-store-item]");
   container.dataset.id = item.id;
 
   const name = storeItem.querySelector("[data-name]");
@@ -24,7 +26,7 @@ function createItem(item) {
   const price = storeItem.querySelector("[data-price]");
   price.innerText = formatCurrency(item.priceCents / 100);
 
-  container.appendChild(storeItem);
+  storeItemContainer.appendChild(storeItem);
 }
 
 export function setupStore() {
